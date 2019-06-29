@@ -2,7 +2,9 @@
 
 This repository contains an easy-to-use Python API to work with the [Coral USB Accelerator](https://coral.withgoogle.com/products/accelerator/).
 
-It follow the original Google repo's [release-chef-branch](https://coral.googlesource.com/edgetpu/+/refs/heads/release-chef) but includes adaptions for the installation on the Raspberry Pi 4 running [Raspian Buster](https://www.raspberrypi.org/downloads/raspbian/).
+It follow the original Google repo's [release-chef-branch](https://coral.googlesource.com/edgetpu/+/refs/heads/release-chef) but includes adaptions for the installation on the Raspberry Pi 4 running [Raspian Buster](https://www.raspberrypi.org/downloads/raspbian/). 
+
+**Hint** The script installs the Edge TPU library for `arm32` architecture and `arm-linux-gnueabihf` gnu-type. However, if you're running a 64-bit linux distro, the generic ``aarch64`` detection and settings should work.
 
 The instructions in the [official get started guide](https://coral.withgoogle.com/docs/accelerator/get-started/#set-up-on-linux-or-raspberry-pi) uses the build output of the above repo so we have to do a few more steps to get the Python API working.
 
@@ -28,7 +30,7 @@ pip3 install <current-edgetpu-version>-py3-none-any.whl
 
 ##### Permission errors
 
-In case you get permission errors from any of the above commands try `sudo` .
+In case you get permission errors from any of the above commands try `sudo`.
 
 ##### Pillow install fails
 
@@ -39,7 +41,7 @@ sudo apt-get install libjpeg-dev zlib1g-dev
 pip3 install Pillow
 ```
 
-##### Camera example`classify_capture.py` fails
+##### Camera example `classify_capture.py` fails
 
 The install script did not rename the `_edgetpu_cpp_wrapper.so` file for me.
 
