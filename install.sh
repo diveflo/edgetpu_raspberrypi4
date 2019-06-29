@@ -57,6 +57,10 @@ elif [[ "${CPU_ARCH}" == "armv7l" ]]; then
     info "Recognized as Raspberry Pi 3 B+."
     LIBEDGETPU_SUFFIX=arm32
     HOST_GNU_TYPE=arm-linux-gnueabihf
+  elif [[ "${MODEL}" == "Raspberry Pi 4 Model B"* ]]; then
+    info "Recognized as Raspberry Pi 4 B."
+    LIBEDGETPU_SUFFIX=arm32
+    HOST_GNU_TYPE=arm-linux-gnueabihf
   fi
 elif [[ "${CPU_ARCH}" == "aarch64" ]]; then
   info "Recognized as generic ARM64 platform."
